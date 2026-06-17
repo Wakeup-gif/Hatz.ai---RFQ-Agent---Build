@@ -26,6 +26,7 @@ hatz-quick-rfq < rfq.txt
 - `docs/deployment/hatz-response-next-steps.md` captures Hatz-side feedback and the recommended build/verify split.
 - `docs/deployment/hatz-transferability-assessment.md` records Hatz.ai transferability findings and phased build plan.
 - `docs/deployment/hatz-rollout-instructions.md` provides plain-English Hatz build, QA, pilot, and rollout instructions.
+- `rollout/hatz-ai-quick-rfq-rollout.zip` is the compact Hatz.ai handoff zip; start with `rollout/hatz-ai-quick-rfq-rollout/READ-ME-FIRST.md`.
 - `docs/hatz-app-manifest.json`, `docs/hatz-output-mapping.md`, and `examples/hatz-input-payloads.json` provide Hatz setup artifacts.
 - `notes/hatz-workspace-unknowns.md` keeps customer/Hatz-specific unknowns off to the side until project owners provide answers.
 - `notes/hatz-ai-discovery-prompt.md` provides a ready-to-send discovery prompt for scoping Hatz workspace transfer.
@@ -54,3 +55,7 @@ The readiness command reports missing validation evidence and deployment decisio
 ## Hatz.ai setup artifacts
 
 Start Hatz implementation with `docs/deployment/hatz-rollout-instructions.md` and `docs/hatz-app-manifest.json`, copy `02-runtime-instructions.md` and `03-output-contract.md` into the Hatz app instructions/output template, use `docs/hatz-output-mapping.md` for workflow variables, and test with `examples/hatz-input-payloads.json`.
+
+## Hatz.ai rollout zip
+
+Give Hatz.ai `rollout/hatz-ai-quick-rfq-rollout.zip`. After unzipping, read `READ-ME-FIRST.md`, then follow `README.md`, `config/hatz-app-manifest.json`, `instructions/02-runtime-instructions.md`, `instructions/03-output-contract.md`, `config/hatz-output-mapping.md`, and `examples/hatz-input-payloads.json`.

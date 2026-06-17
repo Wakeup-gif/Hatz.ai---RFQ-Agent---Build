@@ -1,0 +1,26 @@
+{
+  "ready_example": {
+    "rfq_text": "Customer: Acme Retail\nProject: Lobby refresh\nLocation: Boston\nScope: 3 acrylic wall signs\nDimensions: 24 in x 36 in\nMaterials: acrylic\nFinish: painted blue\nInstall: by vendor",
+    "sources": []
+  },
+  "attachment_reference_only_example": {
+    "rfq_text": "Please quote the attached sign schedule and drawings.",
+    "sources": [
+      {
+        "name": "sign-schedule.pdf",
+        "readable": false,
+        "content": ""
+      }
+    ]
+  },
+  "readable_source_example": {
+    "rfq_text": "Customer is requesting review for storefront signage.",
+    "sources": [
+      {
+        "name": "extracted-email.txt",
+        "readable": true,
+        "content": "Customer: Northside Cafe\nScope: 1 blade sign and 2 vinyl door graphics\nDimensions: blade sign 30 in x 42 in\nDeadline: ASAP"
+      }
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "app_name": "Quick RFQ Summary Agent",
+  "version": "1.5",
+  "purpose": "Prepare estimator-ready RFQ intake summaries for sign and millwork requests while preserving human approval authority.",
+  "instruction_sources": [
+    "docs/source-package/quick-rfq-summary-app-v1.5/02-runtime-instructions.md",
+    "docs/source-package/quick-rfq-summary-app-v1.5/03-output-contract.md"
+  ],
+  "inputs": [
+    {
+      "name": "rfq_text",
+      "type": "text",
+      "required": true,
+      "description": "Current-interaction RFQ, email, note, or pasted project information."
+    },
+    {
+      "name": "sources",
+      "type": "array<object>",
+      "required": false,
+      "description": "Optional readable source records with name, readable flag, and extracted content.",
+      "schema": {
+        "name": "string",
+        "readable": "boolean",
+        "content": "string"
+      }
+    }
+  ],
+  "outputs": [
+    "summary_markdown",
+    "status",
+    "status_reason",
+    "confidence",
+    "missing_information",
+    "human_review_required",
+    "prohibited_authorities",
+    "readiness"
+  ],
+  "statuses": [
+    "Ready for Estimator Review",
+    "Needs Clarification",
+    "Stop — Required Information Missing"
+  ],
+  "human_review_required": true,
+  "prohibited_authorities": [
+    "estimating",
+    "pricing",
+    "scope approval",
+    "schedule commitments",
+    "compliance determinations",
+    "engineering approval",
+    "production release",
+    "purchasing approval",
+    "customer-send behavior"
+  ],
+  "recommended_workflow": [
+    "input_capture",
+    "source_evidence_handling",
+    "rfq_summarizer",
+    "status_branch",
+    "human_review_gate",
+    "evidence_record",
+    "qa_pilot_go_no_go"
+  ],
+  "open_platform_confirmations": [
+    "permissions_roles",
+    "native_audit_logging",
+    "storage_retention",
+    "ocr_pdf_file_extraction_limits",
+    "observability_alerting",
+    "versioning_rollback",
+    "workflow_triggers"
+  ]
+}
