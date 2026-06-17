@@ -9,7 +9,13 @@ from pathlib import Path
 
 from .agent import summarize_rfq
 from .models import RfqSource
-from .validation import EvidenceRecord, evaluate_hatz_readiness, write_evidence_record
+from .validation import (
+    EvidenceRecord,
+    deployment_operations_matrix,
+    evaluate_hatz_readiness,
+    unanswered_deployment_variables,
+    write_evidence_record,
+)
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -21,6 +27,7 @@ def main(argv: list[str] | None = None) -> int:
     summarize_parser.add_argument("--file", action="append", default=[], help="Readable source file to include in current interaction.")
 
     subparsers.add_parser("readiness", help="Print the current empty-evidence Hatz readiness gate report.")
+    subparsers.add_parser("deployment-matrix", help="Print buildable deployment operations and unanswered variables.")
 
     evidence_parser = subparsers.add_parser("record-evidence", help="Write a validation evidence JSON record.")
     evidence_parser.add_argument("evidence_type", choices=["qa-run", "pilot-run", "issue", "release-decision"])
@@ -32,7 +39,7 @@ def main(argv: list[str] | None = None) -> int:
 
     # Backward-compatible default: `hatz-quick-rfq "RFQ text"` still summarizes.
     raw_args = list(argv if argv is not None else sys.argv[1:])
-    commands = {"summarize", "readiness", "record-evidence"}
+    commands = {"summarize", "readiness", "deployment-matrix", "record-evidence"}
     if raw_args and raw_args[0] not in commands and not raw_args[0].startswith("-"):
         raw_args.insert(0, "summarize")
 
@@ -41,6 +48,12 @@ def main(argv: list[str] | None = None) -> int:
         return _summarize_from_args(args)
     if args.command == "readiness":
         print(json.dumps(evaluate_hatz_readiness().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "deployment-matrix":
+        print(json.dumps({
+            "operations": deployment_operations_matrix(),
+            "unanswered_variables": unanswered_deployment_variables(),
+        }, indent=2, sort_keys=True))
         return 0
     if args.command == "record-evidence":
         record = EvidenceRecord(

@@ -82,3 +82,15 @@ def test_hatz_adapter_includes_readiness_report():
 
     assert response["readiness"]["ready_for_hatz"] is False
     assert "smoke_tests" in response["readiness"]["missing_evidence"]
+
+
+def test_deployment_operations_matrix_separates_buildable_from_unknowns():
+    from hatz_quick_rfq.validation import deployment_operations_matrix, unanswered_deployment_variables
+
+    matrix = deployment_operations_matrix()
+    unknowns = unanswered_deployment_variables()
+
+    assert "hatz_routing" in matrix
+    assert "Payload contract" in matrix["hatz_routing"]["buildable_now"][0]
+    assert "Actual Hatz workspace routing primitives and trigger format" in unknowns["hatz_routing"]
+    assert "attachment_text_extraction" in matrix
