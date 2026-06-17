@@ -24,6 +24,8 @@ hatz-quick-rfq < rfq.txt
 - `docs/project-coverage.md` tracks the areas the project must cover before broad operational use.
 - `docs/hatz-readiness-gates.md` defines the evidence and deployment gates required for Hatz rollout.
 - `docs/deployment/hatz-response-next-steps.md` captures Hatz-side feedback and the recommended build/verify split.
+- `docs/deployment/hatz-transferability-assessment.md` records Hatz.ai transferability findings and phased build plan.
+- `docs/hatz-app-manifest.json`, `docs/hatz-output-mapping.md`, and `examples/hatz-input-payloads.json` provide Hatz setup artifacts.
 - `notes/hatz-workspace-unknowns.md` keeps customer/Hatz-specific unknowns off to the side until project owners provide answers.
 - `notes/hatz-ai-discovery-prompt.md` provides a ready-to-send discovery prompt for scoping Hatz workspace transfer.
 - `notes/hatz-repo-pull-prompt.md` provides a prompt for asking Hatz to pull/review the GitHub repo directly.
@@ -46,3 +48,7 @@ python -m hatz_quick_rfq.cli readiness
 ```
 
 The readiness command reports missing validation evidence and deployment decisions. The agent should not be broadly enabled in Hatz until the report returns `ready_for_hatz: true`.
+
+## Hatz.ai setup artifacts
+
+Start Hatz implementation with `docs/hatz-app-manifest.json`, copy `02-runtime-instructions.md` and `03-output-contract.md` into the Hatz app instructions/output template, use `docs/hatz-output-mapping.md` for workflow variables, and test with `examples/hatz-input-payloads.json`.
