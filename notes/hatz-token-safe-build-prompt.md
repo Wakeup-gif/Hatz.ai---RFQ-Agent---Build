@@ -56,6 +56,10 @@ Build requirements:
   - NEEDS_CLARIFICATION
   - STOP_REQUIRED_INFORMATION_MISSING
 - Branch workflow logic on `status_key`, not on punctuation-sensitive display text. Use `display_status` only for human-readable output.
+- Hatz input variable syntax:
+  - Use `{{inputs.rfq_text}}` for the RFQ text field.
+  - Use `{{inputs.sources}}` for optional source metadata.
+  - Add an explicit input-context block to the app prompt so Hatz passes user-provided fields into the model.
 - Human review gate before any customer-facing or operational action
 - Evidence capture for input, sources, summary, status, status reason, confidence, reviewer, timestamp, review decision, and workflow version
 

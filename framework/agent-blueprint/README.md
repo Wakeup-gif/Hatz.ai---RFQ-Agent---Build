@@ -63,3 +63,10 @@ When creating new agents, workflows, or apps, define both a human-readable displ
 - Include the `status_key` values in the manifest, output mapping, rollout README, prompts, tests, and evidence schema.
 
 This prevents repeated clarification cycles where a platform or model changes punctuation in a display label and breaks branch routing.
+
+
+## Hatz input variable rule
+
+For Hatz app prompts, reference user-provided input fields with `{{inputs.<field_name>}}`, for example `{{inputs.rfq_text}}` and `{{inputs.sources}}`.
+
+Do not assume Hatz automatically injects input fields into the prompt. Every future agent handoff should include an explicit input-context block that maps runtime instructions to the Hatz variables, then test one ready-path case to confirm the app is receiving the input.
