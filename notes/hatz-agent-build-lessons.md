@@ -36,6 +36,11 @@ Use these notes when building future Hatz.ai agents, workflows, and apps from th
    - Confirm all three branches route correctly.
    - Confirm human review gates and evidence capture run after routing.
 
+8. **Hatz app builds and workflow builds may use different tool paths.**
+   - Hatz Workshop/API tools may create and test an app but still be unable to create conditional workflows, human review gates, or evidence/audit steps.
+   - Treat app completion and workflow completion as separate milestones.
+   - If workflow APIs are unavailable, generate a workflow config/checklist for manual Hatz UI setup.
+
 ## What to avoid
 
 1. **Do not rely on local file paths inside Hatz.**
@@ -56,6 +61,7 @@ Use these notes when building future Hatz.ai agents, workflows, and apps from th
 
 5. **Do not mark the build complete at the app stage.**
    - A Hatz app can pass tests while the workflow, human review gate, and evidence capture are still unbuilt.
+   - If Hatz says workflow creation is not available through API/tools, ask for a manual workflow JSON/config plus UI checklist.
 
 ## Required future-agent pattern
 
@@ -94,6 +100,7 @@ Create Codex skills or scripts that can automate these repeatable steps:
 
 5. **Hatz workflow checklist generator**
    - Produces workflow steps, branch config, reviewer roles, blocked actions, evidence fields, and go/no-go checklist.
+   - Includes both API/import config and manual UI setup instructions because workflow APIs may not support branching, review gates, or evidence capture.
 
 6. **Hatz ingestion fallback helper**
    - Verifies raw GitHub URLs with `curl`.
@@ -109,3 +116,4 @@ Create Codex skills or scripts that can automate these repeatable steps:
   - `STOP_REQUIRED_INFORMATION_MISSING`
   - `NEEDS_CLARIFICATION`
 - Remaining work after app tests: workflow creation, human review gate, evidence capture, and workflow-level route testing.
+- Hatz reported that workflow branching, human review gates, and evidence capture could not be created through the available Workshop/API tools and may need manual Workflow Builder UI configuration.
