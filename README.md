@@ -27,6 +27,8 @@ hatz-quick-rfq < rfq.txt
 - `docs/deployment/hatz-transferability-assessment.md` records Hatz.ai transferability findings and phased build plan.
 - `docs/deployment/hatz-rollout-instructions.md` provides plain-English Hatz build, QA, pilot, and rollout instructions.
 - `rollout/hatz-ai-quick-rfq-rollout.zip` is the compact Hatz.ai handoff zip; start with `rollout/hatz-ai-quick-rfq-rollout/READ-ME-FIRST.md`.
+- `docs/repo-audit-and-cleanup.md` explains the repo layers, cleanup decisions, and keep/remove policy.
+- `framework/agent-blueprint/` contains reusable structure for reproducing future Hatz agents.
 - `docs/hatz-app-manifest.json`, `docs/hatz-output-mapping.md`, and `examples/hatz-input-payloads.json` provide Hatz setup artifacts.
 - `notes/hatz-workspace-unknowns.md` keeps customer/Hatz-specific unknowns off to the side until project owners provide answers.
 - `notes/hatz-ai-discovery-prompt.md` provides a ready-to-send discovery prompt for scoping Hatz workspace transfer.
@@ -60,3 +62,7 @@ Start Hatz implementation with `docs/deployment/hatz-rollout-instructions.md` an
 ## Hatz.ai rollout zip
 
 Give Hatz.ai `rollout/hatz-ai-quick-rfq-rollout.zip`. After unzipping, read `READ-ME-FIRST.md`, then follow `README.md`, `config/hatz-app-manifest.json`, `instructions/02-runtime-instructions.md`, `instructions/03-output-contract.md`, `config/hatz-output-mapping.md`, and `examples/hatz-input-payloads.json`.
+
+## Repository layers
+
+Use `docs/repo-audit-and-cleanup.md` for the cleanup/audit record. The active implementation is in `src/hatz_quick_rfq/`, source authority is in `docs/source-package/quick-rfq-summary-app-v1.5/`, Hatz handoff is in `rollout/`, and reusable future-agent patterns are in `framework/agent-blueprint/`.

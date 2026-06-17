@@ -1,0 +1,53 @@
+{
+  "app_name": "<Agent Name>",
+  "version": "<version>",
+  "purpose": "<plain-English purpose>",
+  "instruction_sources": [
+    "docs/source-package/<agent-name>/<runtime-instructions>.md",
+    "docs/source-package/<agent-name>/<output-contract>.md"
+  ],
+  "inputs": [
+    {
+      "name": "<input_name>",
+      "type": "text",
+      "required": true,
+      "description": "<what this input captures>"
+    }
+  ],
+  "outputs": [
+    "summary_markdown",
+    "status",
+    "status_reason",
+    "confidence",
+    "human_review_required"
+  ],
+  "statuses": [
+    "Ready for Human Review",
+    "Needs Clarification",
+    "Stop — Required Information Missing"
+  ],
+  "human_review_required": true,
+  "prohibited_authorities": [
+    "pricing",
+    "approval",
+    "schedule commitments",
+    "customer-send behavior"
+  ],
+  "recommended_workflow": [
+    "input_capture",
+    "source_evidence_handling",
+    "agent_run",
+    "status_branch",
+    "human_review_gate",
+    "evidence_record",
+    "qa_pilot_go_no_go"
+  ],
+  "open_platform_confirmations": [
+    "permissions_roles",
+    "audit_logging",
+    "storage_retention",
+    "observability_alerting",
+    "versioning_rollback",
+    "workflow_triggers"
+  ]
+}
