@@ -25,12 +25,14 @@ hatz-quick-rfq < rfq.txt
 - `docs/hatz-readiness-gates.md` defines the evidence and deployment gates required for Hatz rollout.
 - `docs/deployment/hatz-response-next-steps.md` captures Hatz-side feedback and the recommended build/verify split.
 - `docs/deployment/hatz-transferability-assessment.md` records Hatz.ai transferability findings and phased build plan.
+- `docs/deployment/hatz-rollout-instructions.md` provides plain-English Hatz build, QA, pilot, and rollout instructions.
 - `docs/hatz-app-manifest.json`, `docs/hatz-output-mapping.md`, and `examples/hatz-input-payloads.json` provide Hatz setup artifacts.
 - `notes/hatz-workspace-unknowns.md` keeps customer/Hatz-specific unknowns off to the side until project owners provide answers.
 - `notes/hatz-ai-discovery-prompt.md` provides a ready-to-send discovery prompt for scoping Hatz workspace transfer.
 - `notes/hatz-repo-pull-prompt.md` provides a prompt for asking Hatz to pull/review the GitHub repo directly.
 - `notes/hatz-raw-file-review-prompt.md` provides raw GitHub URLs when rendered `blob` pages do not scrape cleanly.
 - `notes/hatz-remaining-files-prompt.md` asks Hatz to fetch the final raw files before producing a transferability assessment.
+- `notes/hatz-rollout-build-prompt.md` asks Hatz to build the sandbox workflow while keeping rollout gated.
 - `tests/test_agent.py` verifies stop conditions, human-review boundaries, adapter metadata, and attachment handling.
 
 ## Boundaries
@@ -51,4 +53,4 @@ The readiness command reports missing validation evidence and deployment decisio
 
 ## Hatz.ai setup artifacts
 
-Start Hatz implementation with `docs/hatz-app-manifest.json`, copy `02-runtime-instructions.md` and `03-output-contract.md` into the Hatz app instructions/output template, use `docs/hatz-output-mapping.md` for workflow variables, and test with `examples/hatz-input-payloads.json`.
+Start Hatz implementation with `docs/deployment/hatz-rollout-instructions.md` and `docs/hatz-app-manifest.json`, copy `02-runtime-instructions.md` and `03-output-contract.md` into the Hatz app instructions/output template, use `docs/hatz-output-mapping.md` for workflow variables, and test with `examples/hatz-input-payloads.json`.
