@@ -51,3 +51,15 @@ evidence/
 rollout/<agent-name>/
 tests/
 ```
+
+## Cycle-control rule for future agents
+
+When creating new agents, workflows, or apps, define both a human-readable display value and a machine-safe key for every workflow branch.
+
+- Use `display_status` for user-facing output, reports, and summaries.
+- Use `status_key` for workflow routing, evidence records, tests, and platform branching.
+- Keep `status_key` ASCII-only, uppercase, and underscore-separated, for example `STOP_REQUIRED_INFORMATION_MISSING`.
+- Do not branch on punctuation-sensitive labels such as text containing em dashes, smart quotes, slashes, or long prose.
+- Include the `status_key` values in the manifest, output mapping, rollout README, prompts, tests, and evidence schema.
+
+This prevents repeated clarification cycles where a platform or model changes punctuation in a display label and breaks branch routing.

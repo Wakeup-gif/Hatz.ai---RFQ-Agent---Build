@@ -51,6 +51,11 @@ Build requirements:
   - Ready for Estimator Review → estimator/PM review
   - Needs Clarification → clarification review
   - Stop — Required Information Missing → escalation/missing-materials handler
+- Machine-safe branch keys:
+  - READY_FOR_ESTIMATOR_REVIEW
+  - NEEDS_CLARIFICATION
+  - STOP_REQUIRED_INFORMATION_MISSING
+- Branch workflow logic on `status_key`, not on punctuation-sensitive display text. Use `display_status` only for human-readable output.
 - Human review gate before any customer-facing or operational action
 - Evidence capture for input, sources, summary, status, status reason, confidence, reviewer, timestamp, review decision, and workflow version
 
@@ -85,6 +90,7 @@ Return your answer in this exact structure:
 6. Evidence capture
 - Fields to store.
 - Where Hatz should store or route evidence if supported.
+- Include both `status_key` and `display_status` so future branch logic does not depend on punctuation.
 
 7. Sandbox QA checklist
 - Minimum tests to run before pilot.
