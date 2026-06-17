@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hatz-quick-rfq-agent"
+version = "0.1.0"
+description = "Deterministic Quick RFQ intake summary agent aligned to Hatz.ai human-review boundaries."
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+hatz-quick-rfq = "hatz_quick_rfq.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
