@@ -28,6 +28,7 @@ hatz-quick-rfq < rfq.txt
 - `notes/hatz-ai-discovery-prompt.md` provides a ready-to-send discovery prompt for scoping Hatz workspace transfer.
 - `notes/hatz-repo-pull-prompt.md` provides a prompt for asking Hatz to pull/review the GitHub repo directly.
 - `notes/hatz-raw-file-review-prompt.md` provides raw GitHub URLs when rendered `blob` pages do not scrape cleanly.
+- `notes/hatz-remaining-files-prompt.md` asks Hatz to fetch the final raw files before producing a transferability assessment.
 - `tests/test_agent.py` verifies stop conditions, human-review boundaries, adapter metadata, and attachment handling.
 
 ## Boundaries
