@@ -24,6 +24,7 @@ hatz-quick-rfq < rfq.txt
 - `docs/project-coverage.md` tracks the areas the project must cover before broad operational use.
 - `docs/hatz-readiness-gates.md` defines the evidence and deployment gates required for Hatz rollout.
 - `notes/hatz-workspace-unknowns.md` keeps customer/Hatz-specific unknowns off to the side until project owners provide answers.
+- `notes/hatz-ai-discovery-prompt.md` provides a ready-to-send discovery prompt for scoping Hatz workspace transfer.
 - `tests/test_agent.py` verifies stop conditions, human-review boundaries, adapter metadata, and attachment handling.
 
 ## Boundaries
