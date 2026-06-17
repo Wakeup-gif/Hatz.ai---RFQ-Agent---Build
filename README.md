@@ -34,6 +34,7 @@ hatz-quick-rfq < rfq.txt
 - `notes/hatz-raw-file-review-prompt.md` provides raw GitHub URLs when rendered `blob` pages do not scrape cleanly.
 - `notes/hatz-remaining-files-prompt.md` asks Hatz to fetch the final raw files before producing a transferability assessment.
 - `notes/hatz-rollout-build-prompt.md` asks Hatz to build the sandbox workflow while keeping rollout gated.
+- `notes/hatz-rollout-folder-read-prompt.md` tells Hatz to read the GitHub rollout folder directly when uploads are unavailable.
 - `tests/test_agent.py` verifies stop conditions, human-review boundaries, adapter metadata, and attachment handling.
 
 ## Boundaries
