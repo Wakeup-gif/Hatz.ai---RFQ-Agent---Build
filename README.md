@@ -23,6 +23,7 @@ hatz-quick-rfq < rfq.txt
 - `src/hatz_quick_rfq/cli.py` provides local execution for pilot evidence and Hatz workflow wiring.
 - `docs/project-coverage.md` tracks the areas the project must cover before broad operational use.
 - `docs/hatz-readiness-gates.md` defines the evidence and deployment gates required for Hatz rollout.
+- `notes/hatz-workspace-unknowns.md` keeps customer/Hatz-specific unknowns off to the side until project owners provide answers.
 - `tests/test_agent.py` verifies stop conditions, human-review boundaries, adapter metadata, and attachment handling.
 
 ## Boundaries
