@@ -22,6 +22,7 @@ hatz-quick-rfq < rfq.txt
 - `src/hatz_quick_rfq/adapters/hatz_adapter.py` maps Hatz-style payloads into summary responses for human review.
 - `src/hatz_quick_rfq/cli.py` provides local execution for pilot evidence and Hatz workflow wiring.
 - `docs/project-coverage.md` tracks the areas the project must cover before broad operational use.
+- `docs/hatz-readiness-gates.md` defines the evidence and deployment gates required for Hatz rollout.
 - `tests/test_agent.py` verifies stop conditions, human-review boundaries, adapter metadata, and attachment handling.
 
 ## Boundaries
@@ -30,4 +31,12 @@ The agent does not estimate, price, approve scope, approve engineering/complianc
 
 ## Project coverage
 
-The build needs to cover product authority, runtime behavior, Hatz workflow integration, guardrails, validation evidence, deployment operations, and future parser depth. See `docs/project-coverage.md` for the full roadmap.
+The build needs to cover product authority, runtime behavior, Hatz workflow integration, guardrails, validation evidence, deployment operations, and future parser depth. See `docs/project-coverage.md` for the full roadmap and `docs/hatz-readiness-gates.md` for rollout gate criteria.
+
+## Readiness gate
+
+```bash
+python -m hatz_quick_rfq.cli readiness
+```
+
+The readiness command reports missing validation evidence and deployment decisions. The agent should not be broadly enabled in Hatz until the report returns `ready_for_hatz: true`.

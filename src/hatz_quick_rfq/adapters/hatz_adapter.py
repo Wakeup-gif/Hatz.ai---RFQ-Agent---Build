@@ -12,6 +12,7 @@ from typing import Any
 from hatz_quick_rfq.agent import summarize_rfq
 from hatz_quick_rfq.contracts import RUNTIME_CONTRACT
 from hatz_quick_rfq.models import RfqSource
+from hatz_quick_rfq.validation import evaluate_hatz_readiness
 
 
 def build_hatz_response(payload: dict[str, Any]) -> dict[str, Any]:
@@ -31,6 +32,10 @@ def build_hatz_response(payload: dict[str, Any]) -> dict[str, Any]:
         for source in payload.get("sources", ())
     )
     summary = summarize_rfq(text=str(payload.get("text", "")), sources=sources)
+    readiness = evaluate_hatz_readiness(
+        evidence=payload.get("evidence"),
+        deployment_decisions=payload.get("deployment_decisions"),
+    )
     return {
         "agent": RUNTIME_CONTRACT["agent_name"],
         "platform_alignment": RUNTIME_CONTRACT["platform_alignment"],
@@ -38,4 +43,5 @@ def build_hatz_response(payload: dict[str, Any]) -> dict[str, Any]:
         "human_review_required": True,
         "prohibited_authorities": RUNTIME_CONTRACT["prohibited_authorities"],
         "source_authority": RUNTIME_CONTRACT["source_authority"],
+        "readiness": readiness.to_dict(),
     }

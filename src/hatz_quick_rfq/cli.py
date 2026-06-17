@@ -3,19 +3,60 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from pathlib import Path
 
 from .agent import summarize_rfq
 from .models import RfqSource
+from .validation import EvidenceRecord, evaluate_hatz_readiness, write_evidence_record
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Create a Hatz-aligned RFQ intake summary.")
-    parser.add_argument("input", nargs="?", help="RFQ text. If omitted, stdin is used.")
-    parser.add_argument("--file", action="append", default=[], help="Readable source file to include in current interaction.")
-    args = parser.parse_args(argv)
+    subparsers = parser.add_subparsers(dest="command")
 
+    summarize_parser = subparsers.add_parser("summarize", help="Render an RFQ Intake Summary.")
+    summarize_parser.add_argument("input", nargs="?", help="RFQ text. If omitted, stdin is used.")
+    summarize_parser.add_argument("--file", action="append", default=[], help="Readable source file to include in current interaction.")
+
+    subparsers.add_parser("readiness", help="Print the current empty-evidence Hatz readiness gate report.")
+
+    evidence_parser = subparsers.add_parser("record-evidence", help="Write a validation evidence JSON record.")
+    evidence_parser.add_argument("evidence_type", choices=["qa-run", "pilot-run", "issue", "release-decision"])
+    evidence_parser.add_argument("title")
+    evidence_parser.add_argument("summary")
+    evidence_parser.add_argument("--reviewer", default="Human reviewer not recorded")
+    evidence_parser.add_argument("--status", default="draft")
+    evidence_parser.add_argument("--root", default="evidence")
+
+    # Backward-compatible default: `hatz-quick-rfq "RFQ text"` still summarizes.
+    raw_args = list(argv if argv is not None else sys.argv[1:])
+    commands = {"summarize", "readiness", "record-evidence"}
+    if raw_args and raw_args[0] not in commands and not raw_args[0].startswith("-"):
+        raw_args.insert(0, "summarize")
+
+    args = parser.parse_args(raw_args)
+    if args.command == "summarize":
+        return _summarize_from_args(args)
+    if args.command == "readiness":
+        print(json.dumps(evaluate_hatz_readiness().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "record-evidence":
+        record = EvidenceRecord(
+            evidence_type=args.evidence_type,
+            title=args.title,
+            summary=args.summary,
+            reviewer=args.reviewer,
+            status=args.status,
+        )
+        print(write_evidence_record(record, root=args.root))
+        return 0
+    parser.error(f"Unsupported command: {args.command}")
+    return 2
+
+
+def _summarize_from_args(args: argparse.Namespace) -> int:
     sources = []
     for name in args.file:
         path = Path(name)
