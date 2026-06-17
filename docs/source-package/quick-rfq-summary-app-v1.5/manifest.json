@@ -1,0 +1,161 @@
+{
+  "package": "quick-rfq-summary-app",
+  "version": "v1.5",
+  "generated_utc": "2026-06-16T00:24:40Z",
+  "description": "Focused Quick RFQ Summary App package with pilot execution assets for sample selection, run tracking, go/no-go decisions, and controlled rollout notes.",
+  "total_package_file_count_including_manifest": 31,
+  "manifest_listed_file_count_excluding_manifest": 30,
+  "manifest_lists_manifest_file": false,
+  "files": [
+    {
+      "path": "00-readme-handoff-guide.md",
+      "bytes": 7312,
+      "sha256": "3e2d9f7a6c5bde2db30827acb37d279f6377e09c3aaf0d93fa198a2e1d967b1c"
+    },
+    {
+      "path": "01-builder-fields.md",
+      "bytes": 2339,
+      "sha256": "e50d81c6caab3dd88a69aded1f428ba4d8f5d250880ea81156fe3e0e595c33e5"
+    },
+    {
+      "path": "02-runtime-instructions.md",
+      "bytes": 8639,
+      "sha256": "1367bc0a31b78050707b0f789a2724d477c429de139f882fbbe5fd8808b00078"
+    },
+    {
+      "path": "03-output-contract.md",
+      "bytes": 4244,
+      "sha256": "ce83b4a3f023c3563a07b70e7746920ecc6d4f9b5aead73dac04a8650fc680e8"
+    },
+    {
+      "path": "04-qa-test-pack.md",
+      "bytes": 9025,
+      "sha256": "b0f3e910f98367b075f731dd46af2d2a81af330f54e70599261a5ac715e06bd6"
+    },
+    {
+      "path": "05-qa-runner-and-patch-control.md",
+      "bytes": 8081,
+      "sha256": "1db1244e14b4515bebad039d7fdf552ad27dbe73cb88de46901f96d630369783"
+    },
+    {
+      "path": "06-internal-pilot-playbook.md",
+      "bytes": 6968,
+      "sha256": "dd2fc447a393757e8226a0c6a74a73689f1d8f26033423fa2de50b03d8e57cb1"
+    },
+    {
+      "path": "07-pilot-summary-report-template.md",
+      "bytes": 1362,
+      "sha256": "9e460550badd4fc167d45be26073879c1f64fd77d5a08e403071e4c35060e886"
+    },
+    {
+      "path": "08-deployment-checklist.md",
+      "bytes": 3245,
+      "sha256": "0082d2db4c0d207e878c25f1f04b4a1dc6a1cea041c135d1956afcfb99dcdab2"
+    },
+    {
+      "path": "09-version-control-and-changelog-policy.md",
+      "bytes": 7558,
+      "sha256": "d4f6fe04a310ea4ea5535a3f94ccb8d99f283ad6a72f103ac20798ce98651ebb"
+    },
+    {
+      "path": "10-rfq-intake-template.md",
+      "bytes": 1986,
+      "sha256": "923f15c0f8ae7c158c031e55c920aca00378201e1abb25ba01ec88f0192ed913"
+    },
+    {
+      "path": "11-sample-inputs-and-golden-outputs.md",
+      "bytes": 10128,
+      "sha256": "394b295ae67857bd32bf663d359913c0099929798b8fcd7eec403fa2dd9336b8"
+    },
+    {
+      "path": "12-v1.5-release-notes.md",
+      "bytes": 1959,
+      "sha256": "597e8f6b6b5290da301f817486668f569d1bf93891d9d69be9dda35e4b70bea3"
+    },
+    {
+      "path": "13-rfq-product-framework-map.md",
+      "bytes": 3028,
+      "sha256": "723e7cb447de32bd1aa547ae4f6328b5bdba8e82e709d648a4c9876375e7846d"
+    },
+    {
+      "path": "14-status-decision-framework.md",
+      "bytes": 3278,
+      "sha256": "83cd57b4bee3e2e332077f6b66dc627aa3686575ba0b8d97ec0b4f22fbabb441"
+    },
+    {
+      "path": "15-missing-info-classification-framework.md",
+      "bytes": 2852,
+      "sha256": "b79e19fded54a3394e9ca3e27cde22179728c1f5d6f409661b80c22c440e1da7"
+    },
+    {
+      "path": "16-scope-decomposition-framework.md",
+      "bytes": 2427,
+      "sha256": "ba6f4f2c409b066941103c9df164434966cc155ab2cb8bdd86230b8e34a7942c"
+    },
+    {
+      "path": "17-source-evidence-framework.md",
+      "bytes": 2381,
+      "sha256": "6b70b049b231e53d90409b1900b3965a320c8abff3100560c8171816ad4dc1e1"
+    },
+    {
+      "path": "18-builder-copy-paste-deployment-pack.md",
+      "bytes": 2536,
+      "sha256": "f4356db6a01f1a14127fa3f8fc9e6961c2387ba75ed0583c10a9dd710a8dd001"
+    },
+    {
+      "path": "19-qa-execution-sheet.md",
+      "bytes": 2733,
+      "sha256": "0e3fb262f1898726ef70826bfa8ce29469901e90a24f17a5f1cc7cccec4efca0"
+    },
+    {
+      "path": "20-pilot-feedback-form.md",
+      "bytes": 1912,
+      "sha256": "3244d814424f31523f5288340fd6a12df0faf54316aac32251830959032b023c"
+    },
+    {
+      "path": "21-readiness-scorecard.md",
+      "bytes": 3442,
+      "sha256": "e3b07f5e92e4b12ed7ba9e765a00326cfd34e02361b78c988a70ab10ed05aa5e"
+    },
+    {
+      "path": "22-v1.5-build-log.md",
+      "bytes": 1503,
+      "sha256": "46dfdf102f04715a8e92962771e5ee5b4aa3c099c2b4f38b35b33d1ca9a71c14"
+    },
+    {
+      "path": "23-smoke-test-script.md",
+      "bytes": 2726,
+      "sha256": "425c42ab349af43107e550a6e241eafcdc6bcdb6a83cc8583cd80f529e1d78fc"
+    },
+    {
+      "path": "24-qa-issue-log.md",
+      "bytes": 2182,
+      "sha256": "e1d26b580004123b509fe3605fa073c28c4f8441830ad39eb096d194114f47df"
+    },
+    {
+      "path": "25-qa-evidence-record-template.md",
+      "bytes": 1574,
+      "sha256": "4ed158530545111d2f1950c296e1f1bdc72b54f673875be9d810d366b963cfe4"
+    },
+    {
+      "path": "26-pilot-sample-selection-guide.md",
+      "bytes": 2922,
+      "sha256": "586e43a7f0e2aabb2f2f9f95307ecb9776b7c307e941fda16b028b6e69c36cc4"
+    },
+    {
+      "path": "27-pilot-run-sheet.md",
+      "bytes": 2409,
+      "sha256": "b14ecdadea0edd9789ba4a789f6de63f21aaf3589bd8b6ea9ebe6bc678e1b1ad"
+    },
+    {
+      "path": "28-go-no-go-decision-record.md",
+      "bytes": 2156,
+      "sha256": "251764fd89bdca3dd2283f71382148dc3612d082637ce0af1d0453edd49ef57c"
+    },
+    {
+      "path": "29-controlled-rollout-notes.md",
+      "bytes": 2479,
+      "sha256": "37a24c0c2798a11df3f846cea85cb29a1f5af6dbc68abcb78e0bd267777b08dc"
+    }
+  ]
+}

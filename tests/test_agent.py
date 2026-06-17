@@ -23,3 +23,14 @@ def test_attachment_reference_not_treated_as_reviewed():
     output = summarize_rfq("Please quote the attached sign schedule and drawings.")
     assert "Attachment mentioned but contents not provided." in output
     assert "Stop condition present:\nYes" in output
+
+
+def test_hatz_adapter_returns_review_envelope():
+    from hatz_quick_rfq.adapters import build_hatz_response
+
+    response = build_hatz_response({"text": "Scope: 2 vinyl signs Dimensions: 10 in x 20 in"})
+
+    assert response["platform_alignment"] == "Hatz.ai"
+    assert response["human_review_required"] is True
+    assert "pricing" in response["prohibited_authorities"]
+    assert "# RFQ Intake Summary" in response["summary_markdown"]

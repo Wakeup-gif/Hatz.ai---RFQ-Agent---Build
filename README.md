@@ -18,9 +18,16 @@ hatz-quick-rfq < rfq.txt
 
 - `src/hatz_quick_rfq/agent.py` contains deterministic extraction, status classification, stop-condition checks, and output rendering.
 - `src/hatz_quick_rfq/models.py` contains the input and analysis contracts.
+- `src/hatz_quick_rfq/contracts/` contains runtime contract metadata and prohibited-authority boundaries.
+- `src/hatz_quick_rfq/adapters/hatz_adapter.py` maps Hatz-style payloads into summary responses for human review.
 - `src/hatz_quick_rfq/cli.py` provides local execution for pilot evidence and Hatz workflow wiring.
-- `tests/test_agent.py` verifies stop conditions, human-review boundaries, and attachment handling.
+- `docs/project-coverage.md` tracks the areas the project must cover before broad operational use.
+- `tests/test_agent.py` verifies stop conditions, human-review boundaries, adapter metadata, and attachment handling.
 
 ## Boundaries
 
 The agent does not estimate, price, approve scope, approve engineering/compliance, schedule, purchase, release production, send customer messages, or make commitments.
+
+## Project coverage
+
+The build needs to cover product authority, runtime behavior, Hatz workflow integration, guardrails, validation evidence, deployment operations, and future parser depth. See `docs/project-coverage.md` for the full roadmap.
