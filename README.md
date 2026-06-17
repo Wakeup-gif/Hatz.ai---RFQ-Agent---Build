@@ -37,6 +37,7 @@ hatz-quick-rfq < rfq.txt
 - `notes/hatz-remaining-files-prompt.md` asks Hatz to fetch the final raw files before producing a transferability assessment.
 - `notes/hatz-rollout-build-prompt.md` asks Hatz to build the sandbox workflow while keeping rollout gated.
 - `notes/hatz-rollout-folder-read-prompt.md` tells Hatz to read the GitHub rollout folder directly when uploads are unavailable.
+- `notes/hatz-token-safe-build-prompt.md` keeps Hatz focused on the rollout files to reduce token usage.
 - `tests/test_agent.py` verifies stop conditions, human-review boundaries, adapter metadata, and attachment handling.
 
 ## Boundaries
