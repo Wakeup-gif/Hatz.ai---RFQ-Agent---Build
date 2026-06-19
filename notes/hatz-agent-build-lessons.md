@@ -41,6 +41,12 @@ Use these notes when building future Hatz.ai agents, workflows, and apps from th
    - Treat app completion and workflow completion as separate milestones.
    - If workflow APIs are unavailable, generate a workflow config/checklist for manual Hatz UI setup.
 
+9. **Do not accept premature blocker claims.**
+   - Hatz should inspect its available tool capabilities before declaring a platform limitation.
+   - Ask Hatz to distinguish between a hard platform blocker, missing documentation, missing permissions, and simply not knowing the correct tool path.
+   - If native branching, review gates, or evidence steps cannot be created directly, ask Hatz to continue with the closest workable implementation: prompt checkpoints, simulated branch logic, review checkpoints, workflow item calls, and end-to-end tests.
+   - Require Hatz to explain exactly what it built, what it simulated, what remains manual, and what evidence proves each path works.
+
 ## What to avoid
 
 1. **Do not rely on local file paths inside Hatz.**
@@ -61,7 +67,7 @@ Use these notes when building future Hatz.ai agents, workflows, and apps from th
 
 5. **Do not mark the build complete at the app stage.**
    - A Hatz app can pass tests while the workflow, human review gate, and evidence capture are still unbuilt.
-   - If Hatz says workflow creation is not available through API/tools, ask for a manual workflow JSON/config plus UI checklist.
+   - If Hatz says workflow creation is not available through API/tools, ask for proof of the attempted tool path and ask it to try alternate Workshop/workflow tools before falling back to manual JSON/config plus UI checklist.
 
 ## Required future-agent pattern
 
@@ -100,7 +106,7 @@ Create Codex skills or scripts that can automate these repeatable steps:
 
 5. **Hatz workflow checklist generator**
    - Produces workflow steps, branch config, reviewer roles, blocked actions, evidence fields, and go/no-go checklist.
-   - Includes both API/import config and manual UI setup instructions because workflow APIs may not support branching, review gates, or evidence capture.
+   - Includes direct build attempts, simulated/checkpoint workflow options, API/import config, and manual UI setup instructions because workflow APIs may not support branching, review gates, or evidence capture.
 
 6. **Hatz ingestion fallback helper**
    - Verifies raw GitHub URLs with `curl`.
@@ -116,4 +122,4 @@ Create Codex skills or scripts that can automate these repeatable steps:
   - `STOP_REQUIRED_INFORMATION_MISSING`
   - `NEEDS_CLARIFICATION`
 - Remaining work after app tests: workflow creation, human review gate, evidence capture, and workflow-level route testing.
-- Hatz reported that workflow branching, human review gates, and evidence capture could not be created through the available Workshop/API tools and may need manual Workflow Builder UI configuration.
+- Hatz initially reported that workflow branching, human review gates, and evidence capture could not be created through the available Workshop/API tools, but later acknowledged it had not fully checked available tool capabilities. Future Hatz prompts should require it to continue the build, test alternate tools, simulate unsupported steps when needed, and clearly separate true blockers from uncertainty.

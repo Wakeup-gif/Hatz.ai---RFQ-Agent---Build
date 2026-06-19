@@ -12,6 +12,10 @@ Use this guide after the Hatz app itself is built and the three app-level tests 
 - Workflow routing field: `status_key`
 - Human display field: `display_status`
 
+## Before accepting a blocker
+
+If Hatz says a workflow step cannot be created, ask it to first inspect available Workshop/workflow tools, try the closest direct implementation, and report exactly which tool failed. Do not accept a generic platform-limitation claim without an attempted tool path, alternate implementation, or simulation/checkpoint fallback.
+
 ## Manual workflow to create
 
 Create a Hatz workflow named:
